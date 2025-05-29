@@ -65,7 +65,7 @@ Tahapan persiapan data dilakukan untuk memastikan dataset siap digunakan dalam p
 
 2. **Pembersihan Data**:
    - ![Delete Outlier](/img/delete_outlier.png)
-   -
+   
    - Menghapus baris dengan outlier pada LT dan LB (Dari hasil korelasi Luas Tanah dan Luas Bangunan memiliki korelasi tertinggi dengan Harga Tanah).
 
 3. **Transformasi Data**:
@@ -173,7 +173,7 @@ Random Forest lebih robust dan mampu menangani variasi dalam data properti Tebet
 Metrik evaluasi yang digunakan adalah **Mean Squared Error (MSE)**, yang dihitung sebagai:
 
 - **Penjelasan Metrik**:
-  - MSE mengukur rata-rata kuadrat selisih antara harga prediksi (\(\hat{y}_i\)) dan harga sebenarnya (\(y_i\)).
+  - MSE mengukur rata-rata kuadrat selisih antara harga prediksi dan harga sebenarnya).
   - Nilai MSE yang lebih kecil menunjukkan prediksi yang lebih akurat.
   - MSE dipilih karena sesuai untuk masalah regresi dan sensitif terhadap kesalahan besar, yang penting dalam konteks harga rumah di mana kesalahan besar dapat berdampak finansial signifikan.
 
@@ -190,5 +190,5 @@ Metrik evaluasi yang digunakan adalah **Mean Squared Error (MSE)**, yang dihitun
 **Penjelasan Kinerja**:
 - Random Forest memberikan MSE terendah pada data pengujian, menunjukkan akurasi dan generalisasi yang lebih baik dibandingkan KNN dan AdaBoost.
 - AdaBoost mengungguli KNN tetapi masih kalah dari Random Forest karena sensitivitas terhadap *outlier* di dataset.
-- Selisih antara Train MSE dan Test MSE pada Random Forest menunjukkan sedikit *overfitting*, tetapi masih dalam batas wajar untuk aplikasi praktis.
+- Selisih antara Train MSE dan Test MSE pada Random Forest menunjukkan sedikit *overfitting*, tetapi masih dalam batas wajar.
 - Model Random Forest dapat digunakan oleh agen properti atau pembeli untuk memperkirakan harga rumah dengan cepat berdasarkan fitur-fitur utama.
