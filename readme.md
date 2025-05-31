@@ -43,15 +43,18 @@ Dataset yang digunakan dalam proyek ini adalah data daftar harga rumah di wilaya
 
 **Exploratory Data Analysis (EDA)**:
 
-![Oulier](/img/outlier.png)
+![outlier](https://github.com/user-attachments/assets/a4837c11-953a-41f7-ae60-8f5a1965cc21)
+
 
 - Visualisasi distribusi harga menunjukkan bahwa sebagian besar rumah memiliki harga di bawah Rp10 miliar, dengan beberapa *outlier* di atas Rp20 miliar.
 
-![Korelasi](/img/korelasi_antar_fitur.png)
+![korelasi_antar_fitur](https://github.com/user-attachments/assets/f4b5a2a5-72fa-4c2b-a644-ac5da0fafe47)
+
 
 - Korelasi antar fitur dianalisis menggunakan *heatmap*. Luas tanah (LT) dan luas bangunan (LB) memiliki korelasi positif yang kuat dengan harga (masing-masing 0,61 dan 0,75), sedangkan jumlah garasi (GRS) memiliki korelasi yang lebih rendah (0,40).
 
-![Scatter Plot](/img//scatterplot_data.png)
+![scatterplot_data](https://github.com/user-attachments/assets/d7d80c39-c364-4d27-96a8-ca89b8d2f258)
+
 
 - Scatter plot antara luas tanah dan harga menunjukkan hubungan yang hampir linier untuk rumah dengan luas tanah di bawah 500 m².
 
@@ -64,7 +67,8 @@ Tahapan persiapan data dilakukan untuk memastikan dataset siap digunakan dalam p
    - Fitur yang digunakan: **LB**, **LT**, **KT**, **KM**, dan **GRS**.
 
 2. **Pembersihan Data**:
-   - ![Delete Outlier](/img/delete_outlier.png)
+   - ![delete_outlier](https://github.com/user-attachments/assets/4a504c2f-ddbe-4312-927b-17ac6c5ffef3)
+
    
    - Menghapus baris dengan outlier pada LT dan LB (Dari hasil korelasi Luas Tanah dan Luas Bangunan memiliki korelasi tertinggi dengan Harga Tanah).
 
@@ -76,13 +80,15 @@ Tahapan persiapan data dilakukan untuk memastikan dataset siap digunakan dalam p
 
    - Harga rumah (HARGA) dinormalisasi dengan membaginya dengan 10^10 untuk mempermudah pelatihan model.
 
-   - ![Standarisasi](/img/stendarisasi_standarscaler.png)
+   - ![stendarisasi_standarscaler](https://github.com/user-attachments/assets/6bf2c89d-3647-42b0-a9e7-a4573c2fb02c)
+
 
    - Fitur numerik (**LB**, **LT**, **KT**, **KM**, **GRS**) diskalakan menggunakan **StandardScaler** untuk memastikan semua fitur berada pada skala yang sama, yang penting untuk algoritma seperti KNN dan AdaBoost.
 
 4. **Pemisahan Data**:
 
-   - ![Train Test Split](/img/bagi_data_traintestsplit.png)
+   - ![bagi_data_traintestsplit](https://github.com/user-attachments/assets/69707acf-e7e5-436d-8652-3868cd51d0ff)
+
    
    - Data dibagi menjadi data pelatihan (90%) dan data pengujian (10%) menggunakan `train_test_split` dengan *random_state=55* untuk konsistensi. Dataset dibagi dengan perbandingan 90:10 dikarenakan jumlahnya yang cukup sedikit untuk melakukan pemodelan.
 
@@ -182,7 +188,8 @@ Metrik evaluasi yang digunakan adalah **Mean Squared Error (MSE)**, yang dihitun
     - **Train MSE**: 0.0121
     - **Test MSE**: 0.0531
 
-  - ![Prediksi Data](/img/predict_data.png)
+  - ![predict_data](https://github.com/user-attachments/assets/36310b87-dc2a-4107-87e8-85daa2d8fcfa)
+
 
   - Contoh prediksi (Random Forest): Untuk rumah dengan luas bangunan 220 m², luas tanah 220 m², 3 kamar tidur, 3 kamar mandi, dan 0 garasi, model memprediksi harga sekitar Rp4,11 miliar, yang sesuai dengan kisaran harga pasar di Tebet.
   - Fitur paling berpengaruh adalah luas tanah (LT) dan luas bangunan (LB), yang konsisten dengan hasil EDA.
